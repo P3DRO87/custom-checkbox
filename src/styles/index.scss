@@ -1,0 +1,118 @@
+@import "modules/general";
+@import "modules/slider-carousel";
+
+.slider-container {
+   min-height: 100%;
+   margin: auto;
+   width: 60%;
+}
+
+.app {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+}
+
+.main-title {
+   margin-top: 0.5em;
+   text-align: center;
+}
+
+.card-item {
+   width: 100%;
+   img {
+      width: 100%;
+   }
+}
+
+.slider-carousel {
+   &:hover {
+      .slider-control {
+         color: #fff;
+         background: rgba(0, 0, 0, 0.6);
+      }
+   }
+}
+
+.checkboxes {
+   margin: auto;
+   border: 1px solid #d3d3d3;
+   border-radius: 4px;
+   padding: 0.5rem 2.5rem;
+   width: 30%;
+   h2 {
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1rem;
+      .text {
+         line-height: 12px;
+      }
+      .accordion-btn {
+         min-width: 1rem;
+         min-height: 1rem;
+         rotate: 45deg;
+         border-top: 2px solid #d3d3d3;
+         border-left: 2px solid #d3d3d3;
+         cursor: pointer;
+      }
+   }
+}
+
+.check-boxes-wrap {
+   margin-top: 1rem;
+   padding: 0 1.5rem;
+}
+
+.cutom-check-box-container {
+   margin-bottom: 1rem;
+}
+
+.container {
+   display: flex;
+   cursor: pointer;
+   user-select: none;
+   input {
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+   }
+   input:checked ~ .checkmark {
+      border-color: transparent;
+   }
+   input:checked ~ .checkmark:after {
+      border-bottom: 2px solid #42d399;
+      border-right: 2px solid #42d399;
+      display: block;
+   }
+   .checkmark {
+      left: 0;
+      height: 1.3rem;
+      width: 1.3rem;
+      display: flex;
+      background: none;
+      border: 1px solid #d3d3d3;
+      border-radius: 4px;
+      position: relative;
+      &::after {
+         content: "";
+         display: none;
+         width: 0.8rem;
+         height: 1.4rem;
+         border-width: 0 3px 3px 0;
+         transform: rotate(45deg);
+         margin: auto;
+         position: absolute;
+         top: -5px;
+         right: 2px;
+      }
+   }
+   .checkbox-text {
+      line-height: 0;
+      margin: auto;
+      margin-left: 0.5rem;
+      font-weight: 700;
+      color: #42d399;
+   }
+}
